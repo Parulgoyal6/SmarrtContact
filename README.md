@@ -1,1 +1,1 @@
-# SmarrtContact
+# SmartContact
