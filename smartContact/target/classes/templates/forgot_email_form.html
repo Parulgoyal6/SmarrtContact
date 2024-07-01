@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <section>
+    <div id="login">
+    
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-8">
+                    <div id="login-box" style="height:270px"class="col-md-14">
+                        
+                        
+                         
+    <!-- message box -->
+    <div th:if="${session.message}" class="container">
+    <div class="alert alert-danger my-2 text-center" role="alert">
+  	<span th:text="${session.message}"></span>
+  	
+</div>
+<!--  th:block th:text="${session.removeAttribute('message')}"--><!--  /th:block-->
+</div>
+                        
+                        
+                        <!-- email form -->
+                        
+                        
+                        
+                        <form method="post"  action="" th:action="@{/send-otp}">
+                        <h1 class="text-center m-4">Your Registered email</h1>
+                        
+                        	<div class="form-group row justify-content-center"> 
+                        	 <div class="col-md-7">
+                        		<input name="email" required="required" type="email" placeholder="Enter email here" class="form-control"/>
+                        		</div>
+                        	</div>
+                        	
+                        	<div class="container text-center mt-3">
+                        		<button class="btn btn-warning"> Send OTP</button>
+                        	</div>
+                        	
+                        	
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
